@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thợ Nhà - Dịch vụ sửa chữa, bảo trì và cải tạo nhà cửa chuyên nghiệp. Sửa máy lạnh, máy giặt, điện nước, nhà vệ sinh uy tín tại TP.HCM">
+    <meta name="keywords" content="thợ sửa nhà, sửa máy lạnh, sửa máy giặt, sửa điện nước, cải tạo nhà, thợ điện, thợ nước">
+    <title>Thợ Nhà - Dịch Vụ Sửa Chữa Nhà Cửa Chuyên Nghiệp</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --gradient-secondary: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+            --color-primary: #11998e;
+            --color-secondary: #38ef7d;
+            --color-accent: #0ba360;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Header Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        
+        .brand-text {
+            font-size: 26px;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #333 !important;
+            padding: 10px 20px !important;
+            margin: 0 5px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: var(--gradient-primary);
+            color: white !important;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .feature-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .btn-gradient {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+            color: white;
+        }
+        
+        .btn-outline-gradient {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-gradient:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .image-wrapper {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transform: rotate(3deg);
+        }
+        
+        .image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            transform: rotate(-6deg) scale(1.05);
+            z-index: -1;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 30px;
+            display: block;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .stat-card {
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .check-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .check-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        
+        .service-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .service-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-features li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .contact-card {
+            padding: 25px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .contact-form {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+            padding: 50px;
+            border-radius: 30px;
+        }
+        
+        .form-control, .form-select {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.15);
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="brand-logo">
+                    <img src="image/logo.png" alt="Thợ Nhà Logo">
+                </div>
+
+                <span class="brand-text">Thợ Nhà</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Dịch vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Thợ Nhà</span><br>
+                        Giải Pháp Sửa Chữa Toàn Diện
+                    </h1>
+                    <p class="hero-subtitle">
+                        Dịch vụ sửa chữa, bảo trì và cải tạo nhà cửa chuyên nghiệp. 
+                        Đội ngũ thợ giàu kinh nghiệm, cam kết chất lượng và uy tín.
+                    </p>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <strong>24/7</strong><br>
+                                    <small>Hỗ trợ</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <strong>Bảo hành</strong><br>
+                                    <small>6 tháng</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box">
+                                <div class="feature-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <strong>Nhanh</strong><br>
+                                    <small>30 phút</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#contact" class="btn btn-gradient">Liên hệ ngay</a>
+                        <a href="#services" class="btn btn-outline-gradient">Xem dịch vụ</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="image-wrapper">
+                            <img src="image/1.png" alt="Thợ sửa chữa chuyên nghiệp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Về Chúng Tôi</span>
+            </h2>
+            <p class="section-subtitle">
+                Thợ Nhà là đơn vị cung cấp dịch vụ sửa chữa, bảo trì và cải tạo nhà cửa hàng đầu tại Việt Nam với đội ngũ thợ lành nghề, giàu kinh nghiệm.
+            </p>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-value">5000+</div>
+                        <div class="stat-label">Khách hàng tin tưởng</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="stat-value">10+</div>
+                        <div class="stat-label">Năm kinh nghiệm</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Khách hàng hài lòng</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="stat-value">15+</div>
+                        <div class="stat-label">Dịch vụ chuyên nghiệp</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="image-wrapper">
+                        <img src="image/8.png" alt="Khách hàng hài lòng" style="width: 100%; height: 400px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4" style="font-size: 2rem; font-weight: 700;">Tại Sao Chọn Thợ Nhà?</h3>
+                    
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <h5 style="font-weight: 600; margin-bottom: 5px;">Đội Ngũ Chuyên Nghiệp</h5>
+                            <p style="color: #666; margin: 0;">Thợ được đào tạo bài bản, có chứng chỉ hành nghề và nhiều năm kinh nghiệm trong lĩnh vực sửa chữa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <h5 style="font-weight: 600; margin-bottom: 5px;">Cam Kết Chất Lượng</h5>
+                            <p style="color: #666; margin: 0;">Chúng tôi cam kết sử dụng vật liệu chính hãng, công nghệ hiện đại và quy trình làm việc chuyên nghiệp.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <h5 style="font-weight: 600; margin-bottom: 5px;">Giá Cả Hợp Lý</h5>
+                            <p style="color: #666; margin: 0;">Báo giá minh bạch, không phát sinh chi phí. Nhiều ưu đãi và chương trình khuyến mãi hấp dẫn.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div>
+                            <h5 style="font-weight: 600; margin-bottom: 5px;">Bảo Hành Dài Hạn</h5>
+                            <p style="color: #666; margin: 0;">Bảo hành 6-12 tháng cho tất cả dịch vụ. Hỗ trợ khách hàng 24/7 khi có vấn đề phát sinh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Dịch Vụ Của Chúng Tôi</span>
+            </h2>
+            <p class="section-subtitle">
+                Cung cấp đa dạng dịch vụ sửa chữa, bảo trì và cải tạo nhà cửa với đội ngũ thợ chuyên nghiệp, giá cả hợp lý.
+            </p>
+            
+            <div class="row g-4">
+                <!-- Service 1: Sửa Máy Lạnh -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="image/2.jpg" alt="Sửa Máy Lạnh">
+                            <div class="service-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Sửa Máy Lạnh</h3>
+                            <p class="service-description">Sửa chữa, vệ sinh, bảo dưỡng máy lạnh các loại. Thay linh kiện chính hãng, nạp gas R410A, R32.</p>
+                            <ul class="service-features">
+                                <li>Vệ sinh máy lạnh</li>
+                                <li>Nạp gas điều hòa</li>
+                                <li>Thay block máy lạnh</li>
+                                <li>Di dời máy lạnh</li>
+                            </ul>
+                            <button 
+                                class="btn btn-gradient w-100 booking-btn"
+                                data-service="Sửa Máy Lạnh">
+                                Đặt lịch ngay
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2: Sửa Máy Giặt -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="image/4.jpg" alt="Sửa Máy Giặt">
+                            <div class="service-icon">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Sửa Máy Giặt</h3>
+                            <p class="service-description">Sửa máy giặt cửa trên, cửa ngang, máy giặt sấy. Thay motor, board mạch, cảm biến chính hãng.</p>
+                            <ul class="service-features">
+                                <li>Sửa máy giặt không vắt</li>
+                                <li>Thay motor máy giặt</li>
+                                <li>Sửa máy giặt kêu to</li>
+                                <li>Vệ sinh máy giặt</li>
+                            </ul>
+                            <button 
+                                class="btn btn-gradient w-100 booking-btn"
+                                data-service="Sửa Máy Giặt">
+                                Đặt lịch ngay
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3: Sửa Nhà Vệ Sinh -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="image/3.jpg" alt="Sửa Nhà Vệ Sinh">
+                            <div class="service-icon">
+                                <i class="fas fa-droplet"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Sửa Nhà Vệ Sinh</h3>
+                            <p class="service-description">Thông tắc bồn cầu, sửa bồn cầu rò nước, thay thiết bị vệ sinh. Chống thấm nhà vệ sinh.</p>
+                            <ul class="service-features">
+                                <li>Thông tắc bồn cầu</li>
+                                <li>Sửa bồn cầu xả nước</li>
+                                <li>Chống thấm toilet</li>
+                                <li>Thay thiết bị vệ sinh</li>
+                            </ul>
+                            <button 
+                                class="btn btn-gradient w-100 booking-btn"
+                                data-service="Sửa Nhà Vệ Sinh">
+                                Đặt lịch ngay
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4: Sửa Điện - Nước -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="image/6.jpg" alt="Sửa Điện - Nước">
+                            <div class="service-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Sửa Điện - Nước</h3>
+                            <p class="service-description">Sửa chữa hệ thống điện, nước trong nhà. Lắp đặt thiết bị điện, sửa rò rỉ đường ống nước.</p>
+                            <ul class="service-features">
+                                <li>Sửa chập điện</li>
+                                <li>Lắp đặt điện nước</li>
+                                <li>Sửa rò rỉ nước</li>
+                                <li>Thay đường ống</li>
+                            </ul>
+                            <button 
+                                class="btn btn-gradient w-100 booking-btn"
+                                data-service="Sửa Điện - Nước">
+                                Đặt lịch ngay
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5: Sửa Đồ Gia Dụng -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="image/5.jpg" alt="Sửa Đồ Gia Dụng">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Sửa Đồ Gia Dụng</h3>
+                            <p class="service-description">Sửa tủ lạnh, tivi, lò vi sóng, bếp từ, quạt điện và các thiết bị gia dụng khác.</p>
+                            <ul class="service-features">
+                                <li>Sửa tủ lạnh</li>
+                                <li>Sửa tivi</li>
+                                <li>Sửa lò vi sóng</li>
+                                <li>Sửa bếp từ</li>
+                            </ul>
+                            <button 
+                                class="btn btn-gradient w-100 booking-btn"
+                                data-service="Sửa Đồ Gia Dụng">
+                                Đặt lịch ngay
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6: Cải Tạo Nhà -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="image/7.jpg" alt="Cải Tạo Nhà">
+                            <div class="service-icon">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">Cải Tạo Nhà</h3>
+                            <p class="service-description">Thi công cải tạo, sửa chữa nhà cửa. Đóng trần thạch cao, sơn nhà, lát nền, ốp tường.</p>
+                            <ul class="service-features">
+                                <li>Sơn nhà</li>
+                                <li>Trần thạch cao</li>
+                                <li>Lát nền gạch</li>
+                                <li>Ốp tường</li>
+                            </ul>
+                            <button 
+                                class="btn btn-gradient w-100 booking-btn"
+                                data-service="Cải Tạo Nhà">
+                                Đặt lịch ngay
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Liên Hệ Với Chúng Tôi</span>
+            </h2>
+            <p class="section-subtitle">
+                Hãy để lại thông tin, chúng tôi sẽ liên hệ tư vấn và báo giá miễn phí trong thời gian sớm nhất.
+            </p>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h5>Điện thoại</h5>
+                        <p class="mb-1"><strong>0123 456 789</strong></p>
+                        <small class="text-muted">Hỗ trợ 24/7</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p class="mb-1"><strong>contact@thonha.vn</strong></p>
+                        <small class="text-muted">Phản hồi trong 24h</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Địa chỉ</h5>
+                        <p class="mb-1"><strong>(91, Lê Đức Thọ, P17, Quận Gò Vấp)</strong></p>
+                        <small class="text-muted">TP. Hồ Chí Minh</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Giờ làm việc</h5>
+                        <p class="mb-1"><strong>Thứ 2 - Chủ nhật</strong></p>
+                        <small class="text-muted">7:00 - 22:00</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="brand-logo">
+                            <img src="image/logo.png" alt="Thợ Nhà Logo">
+                        </div>
+
+                        <span style="font-size: 1.5rem; font-weight: 700;">Thợ Nhà</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                        Dịch vụ sửa chữa, bảo trì và cải tạo nhà cửa chuyên nghiệp, uy tín hàng đầu Việt Nam.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Dịch Vụ</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Sửa máy lạnh</a></li>
+                        <li><a href="#services">Sửa máy giặt</a></li>
+                        <li><a href="#services">Sửa nhà vệ sinh</a></li>
+                        <li><a href="#services">Sửa điện - nước</a></li>
+                        <li><a href="#services">Sửa đồ gia dụng</a></li>
+                        <li><a href="#services">Cải tạo nhà</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Liên Kết</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#about">Giới thiệu</a></li>
+                        <li><a href="#services">Dịch vụ</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Liên Hệ</h4>
+                    <div class="mb-3">
+                        <i class="fas fa-phone-alt" style="color: var(--color-accent); margin-right: 10px;"></i>
+                        <strong>0123 456 789</strong><br>
+                        <small style="color: rgba(255,255,255,0.6); margin-left: 27px;">Hotline 24/7</small>
+                    </div>
+                    <div class="mb-3">
+                        <i class="fas fa-envelope" style="color: var(--color-accent); margin-right: 10px;"></i>
+                        <strong>contact@thonha.vn</strong><br>
+                        <small style="color: rgba(255,255,255,0.6); margin-left: 27px;">Email hỗ trợ</small>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt" style="color: var(--color-accent); margin-right: 10px;"></i>
+                        <strong>91, Lê Đức Thọ, P17, Quận Gò Vấp</strong><br>
+                        <small style="color: rgba(255,255,255,0.6); margin-left: 27px;">TP. Hồ Chí Minh</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Thợ Nhà. Bản quyền thuộc về công ty. Thiết kế với ❤️ tại Việt Nam.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Đặt Lịch -->
+    <div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 20px;">
+        
+        <div class="modal-header">
+            <h5 class="modal-title fw-bold">🛠️ Đặt Lịch Dịch Vụ</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+            <form id="bookingForm">
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                <label class="form-label">Họ và tên *</label>
+                <input type="text" id="name" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                <label class="form-label">Số điện thoại *</label>
+                <input type="tel" id="phone" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Dịch vụ chính *</label>
+                    <select id="mainService" class="form-select" required>
+                        <option value="">-- Chọn dịch vụ --</option>
+                        <option>Sửa Máy Lạnh</option>
+                        <option>Sửa Máy Giặt</option>
+                        <option>Sửa Nhà Vệ Sinh</option>
+                        <option>Sửa Điện - Nước</option>
+                        <option>Sửa Đồ Gia Dụng</option>
+                        <option>Cải Tạo Nhà</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Dịch vụ chi tiết *</label>
+                    <select id="subService" class="form-select" required disabled>
+                        <option value="">-- Chọn dịch vụ chi tiết --</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Giá dịch vụ</label>
+                    <input type="text" id="servicePrice" class="form-control fw-bold text-success" readonly>
+                </div>
+
+
+                <div class="col-12">
+                <label class="form-label">Địa chỉ *</label>
+                <input type="text" id="address" class="form-control" placeholder="Số nhà, đường, quận..." required>
+                </div>
+
+                <div class="col-12">
+                <label class="form-label">Mô tả thêm</label>
+               <textarea id="note" class="form-control"></textarea>
+                </div>
+
+                <div class="col-12">
+                <button type="submit" class="btn btn-gradient w-100">
+                    Xác nhận đặt lịch
+                </button>
+                </div>
+
+            </div>
+            </form>
+        </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const bookingModal = new bootstrap.Modal(
+            document.getElementById('bookingModal')
+        );
+        const serviceData = {
+            "Sửa Máy Lạnh": [
+                { name: "Vệ sinh máy lạnh", price: 300000 },
+                { name: "Nạp gas máy lạnh", price: 450000 },
+                { name: "Thay block máy lạnh", price: 1200000 },
+                { name: "Di dời máy lạnh", price: 500000 }
+            ],
+            "Sửa Máy Giặt": [
+                { name: "Sửa máy giặt không vắt", price: 250000 },
+                { name: "Thay motor máy giặt", price: 900000 },
+                { name: "Vệ sinh máy giặt", price: 350000 }
+            ],
+            "Sửa Nhà Vệ Sinh": [
+                { name: "Thông tắc bồn cầu", price: 200000 },
+                { name: "Sửa bồn cầu rò nước", price: 250000 },
+                { name: "Chống thấm nhà vệ sinh", price: 1500000 }
+            ],
+            "Sửa Điện - Nước": [
+                { name: "Sửa chập điện", price: 180000 },
+                { name: "Sửa rò rỉ nước", price: 200000 },
+                { name: "Thay đường ống nước", price: 400000 }
+            ],
+            "Sửa Đồ Gia Dụng": [
+                { name: "Sửa tủ lạnh", price: 300000 },
+                { name: "Sửa tivi", price: 250000 },
+                { name: "Sửa bếp từ", price: 350000 }
+            ],
+            "Cải Tạo Nhà": [
+                { name: "Sơn nhà", price: 5000000 },
+                { name: "Trần thạch cao", price: 7000000 },
+                { name: "Lát nền gạch", price: 6000000 }
+            ]
+        };
+        const mainService = document.getElementById('mainService');
+        const subService = document.getElementById('subService');
+        const servicePrice = document.getElementById('servicePrice');
+
+        mainService.addEventListener('change', function () {
+            const selectedService = this.value;
+
+            subService.innerHTML = '<option value="">-- Chọn dịch vụ chi tiết --</option>';
+            servicePrice.value = '';
+            subService.disabled = true;
+
+            if (!serviceData[selectedService]) return;
+
+            serviceData[selectedService].forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.name;
+                option.textContent = item.name;
+                option.dataset.price = item.price;
+                subService.appendChild(option);
+            });
+
+            subService.disabled = false;
+        });
+
+        subService.addEventListener('change', function () {
+            const selectedOption = this.options[this.selectedIndex];
+            const price = selectedOption.dataset.price;
+
+            if (price) {
+                servicePrice.value = Number(price).toLocaleString('vi-VN') + ' VNĐ';
+            } else {
+                servicePrice.value = '';
+            }
+        });
+        // Smooth scroll for navigation
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                    }
+                }
+            });
+        });
+        
+        // Active navigation on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        document.querySelectorAll('.booking-btn, .book-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+
+                const serviceName = this.dataset.service;
+
+                mainService.value = serviceName;
+                mainService.dispatchEvent(new Event('change'));
+
+                subService.selectedIndex = 0;
+                servicePrice.value = '';
+
+                bookingModal.show();
+            });
+        });
+
+        //Modal
+        document.getElementById("bookingForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const data = {
+                name: document.getElementById("name").value,
+                phone: document.getElementById("phone").value,
+                mainService: document.getElementById("mainService").value,
+                subService: document.getElementById("subService").value,
+                price: document.getElementById("servicePrice").value,
+                address: document.getElementById("address").value,
+                note: document.getElementById("note").value
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycby2t-H0E2BPkv_IDJaLGoquzUlqgh6ZruEbRultT2_YjUf8L4H937Elvj767tNwXxCM/exec", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                alert("✅ Đặt lịch thành công");
+                document.getElementById("bookingForm").reset();
+                bootstrap.Modal.getInstance(
+                document.getElementById("bookingModal")
+                ).hide();
+            })
+            .catch(err => {
+                console.error(err);
+                alert("❌ Không thể kết nối máy chủ");
+            });
+            });
+    </script>
+</body>
+</html>
